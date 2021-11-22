@@ -1,0 +1,81 @@
+.error-main{
+    background: rgb(255, 190, 69);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+
+
+    .error-card{
+        background: grey;
+        height: 200px;
+        max-width: 700px;
+        box-shadow: -15px 15px 30px 0 black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .error-h{
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 8px;
+
+            h1{
+                font-size: 30px;
+                margin: 0;
+                font-weight: 700;
+            }
+
+            h2{
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            button{
+                background: rgb(255, 190, 69);
+                border: none;
+                padding: 0;
+                text-transform: uppercase;
+                
+
+                a{
+                    font-size: 17px;
+                }
+            }
+
+            button:hover{
+                background: rgb(255, 239, 97);
+            }
+
+            button:active{
+                background: rgba(255, 200, 97, 0.699);
+            }
+        }
+    }
+
+    @media only screen and (min-width: 480px){
+        
+        .error-card{
+            gap: 20%;
+
+            .error-h{
+
+                h1{
+                    font-size: 40px;
+                }
+        
+                h2{
+                    font-size: 28px;
+                }
+            }
+        }
+
+        
+    }
+
+
+}

@@ -1,0 +1,114 @@
+.contact-bg{
+    background: rgb(56, 56, 56);
+    height: 100%;
+    padding: 1rem 0 0 0;
+
+
+    
+    .contact-form{
+        @include form-neumorphism (#202020, rgb(78, 78, 78));
+
+
+        ::placeholder{
+            color: rgb(180, 180, 180);
+        }
+
+        input{
+            @include input-neumorphism (rgb(32, 32, 32), #4e4e4e, 15px);
+            color: rgb(235, 235, 235);
+        }
+
+        textarea{
+            @include textarea-neumorphism (rgb(32, 32, 32), #4e4e4e, 15px);
+            color: rgb(235, 235, 235);
+        }
+
+        h3{
+            font-family: 'Arvo', serif;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .contact-btn{
+            background: rgb(248, 157, 38);
+            border: none;
+        }
+
+        .contact-btn:hover{
+            background: rgb(211, 129, 22);
+        }
+
+        .contact-btn:active{
+            background: rgb(168, 101, 12);
+        }
+
+
+        button{
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+
+            svg{
+                width: 25px;
+            }
+        }
+    }
+
+
+    .socialmedia-contact{
+        background: linear-gradient(rgb(56, 56, 56), rgb(104, 104, 104));
+        width: 100vw;
+        padding: 1rem;
+        
+
+        p{
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+
+        .socialmedia-icons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+
+
+            .shadow-1{
+                padding: 1rem;
+                box-shadow: inset 5px 5px 5px rgb(97, 97, 97), inset -5px -5px 5px rgb(58, 58, 58), 0 0 10px rgb(36, 36, 36);
+                border-radius: 50%;
+
+
+
+                .wpp{
+                    font-size: 40px;
+                    background: none;
+                }
+            }
+
+            .shadow-1:hover{
+                background: rgb(82, 82, 82);
+                box-shadow: inset 5px 5px 5px rgb(73, 73, 73), inset -5px -5px 5px rgb(59, 59, 59), 0 0 10px rgb(43, 43, 43);
+            }
+
+            .shadow-2{
+                @extend .shadow-1;
+
+
+                .ig{
+                    font-size: 38px;
+                    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+                    border-radius: 13px;
+                }
+            }
+            
+        }
+        
+    }
+}

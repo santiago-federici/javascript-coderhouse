@@ -1,0 +1,118 @@
+
+
+
+.hero{
+    background: url(../assets/img-heromain.jpg)
+        no-repeat center/cover;
+    height: 100vh;
+    display: grid;
+}
+
+main{
+
+    span{
+        font-size: 24px;
+    }
+
+    .horarios{
+        border-top: 2.5px solid rgb(70, 70, 70);
+        border-bottom: 2.5px solid rgb(70, 70, 70);
+        width: 200px;
+        font-size: 33px;
+        margin: auto;
+        margin-bottom: 50px;
+    }
+
+    .primer-texto{
+        display: grid;
+        padding-bottom: 60px;
+        max-width: 400px;
+        margin: auto;
+        font-size: 20px;
+    }
+
+    .primer-texto span{
+        transition: ease-in-out 200ms;
+    }
+
+    .primer-texto:hover span{
+        color: rgb(255, 255, 0);
+        font-size: 30px;
+    }
+
+    .turno{
+        margin: auto;
+        width: fit-content;
+        font-size: 26px;
+    }
+
+    .primer-texto .turno{
+        transition: ease-in-out 200ms;
+        background: linear-gradient(black, grey);
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size 500ms;
+    }
+
+    .primer-texto:hover .turno{
+        background-size: 100% 3px;
+    }
+
+    .segundo-texto{
+        @extend .primer-texto;
+        padding-bottom: 0;
+    }
+
+    .segundo-texto span{
+        transition: ease-in-out 200ms;
+    }
+
+    .segundo-texto:hover span{
+        color: rgb(255, 255, 0);
+        font-size: 30px;
+    }
+
+    .turno{
+        margin: auto;
+        width: fit-content;
+    }
+
+    .segundo-texto .turno{
+        transition: ease-in-out 200ms;
+        background: linear-gradient(black, grey);
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size 500ms;
+    }
+
+    .segundo-texto:hover .turno{
+        font-size: 30px;
+        background-size: 100% 3px;
+    }
+
+    @media only screen and (min-width: 576px){
+        
+        .primer-texto{
+            font-size: 23px;
+        }
+
+        .segundo-texto{
+            font-size: 23px;
+        }
+        
+        .horarios{
+            font-size: 38px;
+        }
+
+        span{
+            font-size: 28px;
+        }
+
+    }
+
+    .aparecer{
+        display: none;
+    }
+}

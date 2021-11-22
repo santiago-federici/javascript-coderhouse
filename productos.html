@@ -1,0 +1,578 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BAKKEN | PRODUCTOS</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/main.css">
+    
+        <!-- Font family Righteous-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+        <!-- Font family Righteous end -->
+    
+    
+        <!-- Font family Montserrat-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <!-- Font family Montserrat end -->
+    
+    
+        <!-- Font family Montserrat italic-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+        <!-- Font family Montserrat italic end -->
+    
+    
+        <!-- Font family Varela Round, sans-serif -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+        <!-- Font family Varela Round, sans-serif end -->
+    
+    
+    
+        <!-- iconos iconify -->
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <!-- iconos iconify fin -->
+
+
+        <meta name="descrption" content="Mirá nuestro catálogo de productos acá.">
+        <meta name="keywords" content="PRODUCTOS, FACTURAS, CONGELADOS, CONSERVAS, REBANADOS, FARGO, BIMBO">
+
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    </head>
+<body onload="agregarProdHTML()">
+    
+    <header>
+
+        <h1><a href="index.html" class="h1">BAKKEN</a></h1>
+        <nav class="menu">
+
+
+            <div class="dark-background"></div>
+
+            <div class="user-hover" onclick="abrirDiv()">
+                <span class="iconify user-icon" data-icon="bx:bxs-user"></span>
+                <div class="login-register-section">
+                    <span class="iconify close-log-reg" data-icon="gridicons:cross-circle" onclick="cerrarDiv()"></span>
+                    <div class="login-register-background"></div>
+                    <div class="login-register-background-two"></div>
+
+                    <div class="btns-log-reg">
+                        <button class="login-section">INICIAR SESIÓN</button>
+                        <button class="register-section">REGISTRARSE</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cart-hover">
+                <span class="iconify cart-icon" data-icon="eva:shopping-cart-fill"></span>
+                <div class="cart-table">
+                    <table>
+                        <thead>
+                            <tr class="tr-carrito">
+                                <th>Cantidad</th>
+                                <th>Nombre</th>
+                                <th>Precio (u)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="listaCarrito"></tbody>
+                    </table>
+
+                    <button class="btn-vaciar">Vaciar carrito</button>
+                    <button class="btn-comprar"><a href="compras.html">Comprar</a></button>
+                </div>
+            </div>
+
+
+
+            <div class="menu__sm">
+                <button class="menu__sm--btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="iconify menu-icon" data-icon="gg:menu" data-inline="false"></span></button>
+    
+
+                <div class="offcanvas offcanvas-start menu__sm--offcanvas" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                    
+                    <div>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+    
+                    <div class="offcanvas-body">
+                        <ul class="menu__sm--links">
+                            <li class="deep-box"><a href="index.html" class="menu-link active-page"><span class="iconify" data-icon="ri:home-2-line" data-inline="false"></span><p>Home</p></a></li>
+                            <li class="deep-box"><a href="productos.html" class="menu-link"><span class="iconify" data-icon="fontisto:shopping-basket" data-inline="false"></span><p>Productos</p></a></li>
+                            <li class="deep-box"><a href="opiniones.html" class="menu-link"><span class="iconify" data-icon="vaadin:comments-o" data-inline="false"></span><p>Opiniones</p></a></liclass=>
+                            <li class="deep-box"><a href="ubicacion.html" class="menu-link"><span class="iconify" data-icon="akar-icons:location" data-inline="false"></span><p>Ubicación</p></a></li>
+                            <li class="deep-box"><a href="contacto.html" class="menu-link"><span class="iconify" data-icon="fluent:contact-card-20-regular" data-inline="false"></span><p>Contactanos</p></a></liclass=>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>  
+            
+
+
+            <ul class="menu__md">         
+                <li class="li-animation"><a href="index.html" class="menu-link">Home</a></li>
+                <li class="li-animation"><a href="productos.html" class="menu-link active-page">Productos</a></li>
+                <li class="li-animation"><a href="opiniones.html" class="menu-link">Opiniones</a></li>
+                <li class="li-animation"><a href="ubicacion.html" class="menu-link">Ubicación</a></li>
+                <li class="li-animation"><a href="contacto.html" class="menu-link">Contactanos</a></li>
+
+            </ul>
+            
+            
+        </nav>
+        
+        
+    </header>
+
+    <main class="productos-bg" id="volver-boton">
+        
+        
+        <nav class="categorias">
+            <li class="nav-animation"><a href="#prod.congelados" id="cambio-color">Panadería</a></li>
+            <li class="nav-animation"><a href="#prod.rebanados" id="cambio-color">Rebanados</a></li>
+            <li class="nav-animation"><a href="#prod.snacks" id="cambio-color">Snacks</a></li>
+            <li class="nav-animation"><a href="#prod.bebidas" id="cambio-color">Bebidas</a></li>
+            <li class="nav-animation"><a href="#prod.conservas" id="cambio-color">Conservas</a></li>
+        </nav>
+
+        
+
+
+
+                                    <!-- PANADERIA -->
+        <div class="separador-panaderia"><h2 id="prod.congelados">PANADERÍA</h2></div>
+
+        <div class="contenedor">
+
+            <article class="card">
+                <div class="card__img" id="prod01"></div>
+                <div class="card__txt">
+                    <h3>Medialunas</h3>
+                    <h3 class="precio">$22</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod02"></div>
+                <div class="card__txt">
+                    <h3>Sacramentos</h3>
+                    <h3 class="precio">$22</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod03"></div>
+                <div class="card__txt">
+                    <h3>Panal de Membrillo</h3>
+                    <h3 class="precio">$25</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod04"></div>
+                <div class="card__txt">
+                    <h3>Panal de Batata</h3>
+                    <h3 class="precio">$25</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod05"></div>
+                <div class="card__txt">
+                    <h3>Croissant</h3>
+                    <h3 class="precio">$30</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod06"></div>
+                <div class="card__txt">
+                    <h3>Rejilla de DDL</h3>
+                    <h3 class="precio">$25</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod07"></div>
+                <div class="card__txt">
+                    <h3>Rejilla Pastelera</h3>
+                    <h3 class="precio">$25</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+        </div>
+                                    <!-- PANADERIA -->
+
+
+
+
+                                    <!-- REBANADOS -->
+        <div class="separador-rebanados"><h2 id="prod.rebanados">REBANADOS</h2></div>
+
+        <div class="contenedor">
+
+            <article class="card">
+                <div class="card__img" id="prod08"></div>
+                <div class="card__txt--1">
+                    <h3>Rodajas Finas Grande</h3>
+                    <h3 class="precio">$200</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod09"></div>
+                <div class="card__txt--1">
+                    <h3>Rodajas Finas Chico</h3>
+                    <h3 class="precio">$140</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod10"></div>
+                <div class="card__txt--1">
+                    <h3>Mix Cereal</h3>
+                    <h3 class="precio">$220</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod11"></div>
+                <div class="card__txt--1">
+                    <h3>Doble Integral</h3>
+                    <h3 class="precio">$200</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod12"></div>
+                <div class="card__txt--1">
+                    <h3>Salvado Plus Grande</h3>
+                    <h3 class="precio">$235</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod13"></div>
+                <div class="card__txt--1">
+                    <h3>Salvado Plus Chico</h3>
+                    <h3 class="precio">$180</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+        </div>
+                                    <!-- REBANADOS -->
+
+
+
+
+                                    <!-- SNACKS -->
+
+        <div class="separador-snacks"><h2 id="prod.snacks">SNACKS</h2></div>
+
+        <div class="contenedor">
+
+            <article class="card">
+                <div class="card__img" id="prod14"></div>
+                <div class="card__txt--2">
+                    <h3>Papas Mostaza</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod15"></div>
+                <div class="card__txt--2">
+                    <h3>Papas Asado Criollo</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod16"></div>
+                <div class="card__txt--2">
+                    <h3>Papas Queso crema y Ciboulette</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod17"></div>
+                <div class="card__txt--2">
+                    <h3>Papas Ketchup</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod18"></div>
+                <div class="card__txt--2">
+                    <h3>Papas Limón</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod19"></div>
+                <div class="card__txt--2">
+                    <h3>Papas Onduladas</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod20"></div>
+                <div class="card__txt--2">
+                    <h3>Papas Salame</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod21"></div>
+                <div class="card__txt--2">
+                    <h3>Papas Jamón Serrano</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+        </div>
+                                    <!-- SNACKS -->
+
+
+
+
+                                    <!-- BEBIDAS -->
+
+        <div class="separador-bebidas"><h2 id="prod.bebidas">BEBIDAS</h2></div>
+
+        <div class="contenedor">
+
+            <article class="card">
+                <div class="card__img" id="prod22"></div>
+                <div class="card__txt--3">
+                    <h3>Coca Cola 500ml</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod23"></div>
+                <div class="card__txt--3">
+                    <h3>Coca Cola S/A 500ml</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod24"></div>
+                <div class="card__txt--3">
+                    <h3>Coca Cola Light 500ml</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod25"></div>
+                <div class="card__txt--3">
+                    <h3>Sprite 500ml</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod26"></div>
+                <div class="card__txt--3">
+                    <h3>Fanta 500ml</h3>
+                    <h3 class="precio">$85</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod27"></div>
+                <div class="card__txt--3">
+                    <h3>Coca Cola 1L</h3>
+                    <h3 class="precio">$120</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod28"></div>
+                <div class="card__txt--3">
+                    <h3>Sprite 1L</h3>
+                    <h3 class="precio">$120</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod29"></div>
+                <div class="card__txt--3">
+                    <h3>Fanta 1L</h3>
+                    <h3 class="precio">$120</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod30"></div>
+                <div class="card__txt--3">
+                    <h3>Coca Cola 2,25L</h3>
+                    <h3 class="precio">$210</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod31"></div>
+                <div class="card__txt--3">
+                    <h3>Sprite 2,25L</h3>
+                    <h3 class="precio">$210</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod32"></div>
+                <div class="card__txt--3">
+                    <h3>Fanta 2,25L</h3>
+                    <h3 class="precio">$210</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+        </div>
+                                    <!-- BEBIDAS -->
+
+
+
+
+                                    <!-- CONSERVAS -->
+        
+        <div class="separador-conservas"><h2 id="prod.conservas">CONSERVAS</h2></div>
+
+        <div class="contenedor">
+                                    
+            <article class="card">
+                <div class="card__img" id="prod33"></div>
+                <div class="card__txt--4">
+                    <h3>Mayo V Remolacha</h3>
+                    <h3 class="precio">$320</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod34"></div>
+                <div class="card__txt--4">
+                    <h3>Mayo V Albahaca</h3>
+                    <h3 class="precio">$320</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod35"></div>
+                <div class="card__txt--4">
+                    <h3>Mayo V Zanahoria</h3>
+                    <h3 class="precio">$320</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod36"></div>
+                <div class="card__txt--4">
+                    <h3>Mayo V Original</h3>
+                    <h3 class="precio">$320</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod37"></div>
+                <div class="card__txt--4">
+                    <h3>Mayo V Ajo</h3>
+                    <h3 class="precio">$320</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod38"></div>
+                <div class="card__txt--4">
+                    <h3>Puré de Garbanzos</h3>
+                    <h3 class="precio">$380</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img" id="prod39"></div>
+                <div class="card__txt--4">
+                    <h3>Puré de Berenjenas</h3>
+                    <h3 class="precio">$380</h3>
+                    <button class="btn-agregar">Agregar</button>
+                </div>
+            </article>
+
+        </div>
+                                    <!-- CONSERVAS -->
+
+
+
+        <button class="btn-prod button" id=""><a href="#volver-boton" id="cambio-color-2">Ir al principio de la página</a></button>
+    </main>
+
+
+    <footer>
+        <div class="socialmedia">
+            <a href="https://wa.me/5492615162079"><span class="iconify socialmedia--wpp" data-icon="logos:whatsapp" data-inline="false"></span></a>
+            <a href="https://www.instagram.com/bakken.mza/"><span class="iconify socialmedia--ig" data-icon="logos:instagram-icon" data-inline="false"></span></a>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
