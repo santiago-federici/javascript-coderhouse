@@ -69,6 +69,22 @@
         <h1><a href="index.html" class="h1">BAKKEN</a></h1>
         <nav class="menu">
 
+            <div class="dark-background"></div>
+
+            <div class="user-hover">
+                <span class="iconify user-icon" data-icon="bx:bxs-user" onclick="abrirDiv()"></span>
+                <div class="login-register-section">
+                    <span class="iconify close-log-reg" data-icon="gridicons:cross-circle" onclick="cerrarDiv()"></span>
+                    <div class="login-register-background"></div>
+                    <div class="login-register-background-two"></div>
+
+                    <div class="btns-log-reg">
+                        <button class="login-section" onclick="logInSection()">INICIAR SESIÓN</button>
+                        <button class="register-section" onclick="registerSection()">REGISTRARSE</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="menu__sm">
                 
                 <button class="menu__sm--btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="iconify menu-icon" data-icon="gg:menu" data-inline="false"></span></button>
