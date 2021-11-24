@@ -91,7 +91,6 @@ function captura(producto){
 
 
 
-
 function abrirDiv(){
     
     $(".login-register-section").fadeIn("slow");
@@ -103,8 +102,8 @@ function abrirDiv(){
 
 function cerrarDiv(){
     
-    $(".login-register-section").remove()
-    $(".dark-background").remove()
+    $(".login-register-section").fadeOut()
+    $(".dark-background").fadeOut()
 };
 
 
@@ -118,6 +117,7 @@ function cerrarDiv(){
 const logInRegisterSection = document.querySelector(".login-register-section");
 const logIn = document.querySelector(".login-section");
 const register = document.querySelector(".register-section");
+let usuarioIniciado = false;
 
 
 //REGISTER
@@ -130,7 +130,7 @@ function registerSection(){
     const form = document.createElement("div");
     form.innerHTML = `
         <form class="form-register">
-            <span class="iconify left-arrow" data-icon="bi:arrow-left-circle-fill"></span>
+            <span class="iconify left-arrow" data-icon="bi:arrow-left-circle-fill" onclick="volverLogin()"></span>
             <h2>REGISTER</h2>
             <input type="email" placeholder="Correo electrónico" required id="email-register">
             <input type="password" placeholder="Contraseña" required id="passwordUno">
@@ -144,10 +144,6 @@ function registerSection(){
 
     logInRegisterSection.appendChild(form)
 }
-
-
-
-
 
 
 
@@ -172,42 +168,60 @@ function crearCuenta() {
         const div = document.createElement("div");
         div.innerHTML = `
         <div class="register-completed">
+        <span class="iconify close-log-reg" data-icon="gridicons:cross-circle" onclick="cerrarDiv()"></span>
         <h2>¡Te has registrado correctamente!</h2>
         </div>
         `;
 
         logInRegisterSection.appendChild(div);
+
+        $(".login-register-section").fadeOut(3500);
+        $(".dark-background").fadeOut(3500);
+
+        usuarioIniciado = true;
     }else{
-        console.log("Las constraseñas no coinciden. Por favor intentalo de nuevo.")
+        $(".form-register").append('<p class="pass-incorrectas">Las contraseñas no coinciden. Por favor, intentelo nuevamente.</p>')
     }
+
 }
 
 
 
+
 //LOGIN
-logIn.addEventListener("click", logInSection)
-
-
 function logInSection(){
     logInRegisterSection.innerHTML = '';
 
     const form = document.createElement("div");
     form.innerHTML = `
-        <form class="form-login">
-            <span class="iconify left-arrow" data-icon="bi:arrow-left-circle-fill"></span>
+            <form class="form-login">
+            <span class="iconify left-arrow" data-icon="bi:arrow-left-circle-fill" onclick="volverLogin()"></span>
             <h2>LOGIN</h2>
             <input type="email" placeholder="Correo electrónico" required id="email-login">
             <input type="password" placeholder="Contraseña" required id="pass-login">
             <p class="login-btn" type="submit" onclick="loguearUsuario()">INICIAR SESIÓN</p>
-            <p>¿No tienes una cuenta aún?</p>
+            <p onclick="registerSection()" class="no-cuenta">¿No tienes una cuenta aún?</p>
             <div class="login-background"></div>
             <div class="login-background-two"></div>
             <div class="login-background-three"></div>
-        </form>
-        `
-
+            </form>
+            `
+            
     logInRegisterSection.appendChild(form)
 }
+        
+        
+function volverLogin(){
+    logInRegisterSection.innerHTML = `<span class="iconify close-log-reg" data-icon="gridicons:cross-circle" onclick="cerrarDiv()"></span>
+    <div class="login-register-background"></div>
+    <div class="login-register-background-two"></div>
+
+    <div class="btns-log-reg">
+        <button class="login-section" onclick="logInSection()">INICIAR SESIÓN</button>
+        <button class="register-section" onclick="registerSection()">REGISTRARSE</button>
+    </div>`
+}
+
 
 
 
@@ -219,10 +233,51 @@ function loguearUsuario(){
     usuario = JSON.parse(localStorage.getItem("usuario"));
 
     if(emailLogin === usuario.email && passLogin === usuario.passwordUno){
-        console.log("Te has logueado correctamente")
+
+
+        logInRegisterSection.innerHTML = '';
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <div class="register-completed">
+        <span class="iconify close-log-reg" data-icon="gridicons:cross-circle" onclick="cerrarDiv()"></span>
+        <h2>¡Te has logueado correctamente!</h2>
+        </div>
+        `;
+
+        logInRegisterSection.appendChild(div);
+
+        $(".login-register-section").fadeOut(3500);
+        $(".dark-background").fadeOut(3500);
+
+        usuarioIniciado = true;
+
     }else{
-        console.log("El correo o la contraseña ingresados no coinciden.")
+        $(".form-login").append('<p class="mal-logueo">El correo y la contraseña no coinciden. Por favor intentalo de nuevo.</p>')
     }
 }
 
+
+
+function compraFinalizar(){
+    if(usuarioIniciado){
+        $(".compra-lista").fadeIn("slow");
+        $(".compra-lista").fadeOut(4000)
+        $(".dark-background").fadeIn("slow");
+        $(".dark-background").fadeOut(4000)
+        const compraLista = document.querySelector(".compra-lista")
+        compraLista.innerHTML = '';
+        $(".compra-lista").append("<h2>La compra se ha realizado con éxito.</h2>")
+        carrito = [];
+        localStorage.clear();
+        agregarProdHTML();
+    }else{
+        $(".compra-lista").fadeIn("slow");
+        $(".compra-lista").fadeOut(4000)
+        $(".dark-background").fadeIn("slow");
+        $(".dark-background").fadeOut(4000)
+        const compraLista = document.querySelector(".compra-lista")
+        compraLista.innerHTML = '';
+        $(".compra-lista").append("<h2>Necesitas iniciar sesión antes de poder realizar una compra.</h2>")
+    }
+};
 
